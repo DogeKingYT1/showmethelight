@@ -10,3 +10,9 @@ The following webpage includes:
 - Kamala's lie about working at McDonalds vs Trump actually going to a McDonalds to work at it for a day
 - Charlie Kirk's question: What has Kamala done and what is her greatest accomplishment?
 - The violence that is on the left and in the Democratic party vs the Republicans
+- Part of Ashley Biden's diary on the public, clear internet via [archive.org](https://archive.org)
+
+AI Deep dives:
+- Obama compared to Trump's administration
+- The labels and smears by media (True or False)
+- Ashley Biden's Diary
