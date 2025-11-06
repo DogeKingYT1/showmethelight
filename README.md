@@ -15,4 +15,6 @@ The following webpage includes:
 AI Deep dives:
 - Obama compared to Trump's administration
 - The labels and smears by media (True or False)
-- Ashley Biden's Diary
+- Ashley Biden's Diary, did Biden do innopropriate things to her in the shower?
+- Is Donald Trump's deportation process right?
+- Hunter Biden's laptop, where has it gone?
