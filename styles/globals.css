@@ -1,23 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;600&display=swap');
 
 :root {
-  --bg: #f6f8fb;
-  --card: #ffffff;
+  --bg: #ffffff;
+  --card: #f9fafb;
   --muted: #6b7280;
-  --accent: #0f172a;
-  --accent-2: #0ea5a4;
+  --accent: #111827;
+  --accent-2: #3b82f6;
   --red: #ef4444;
-  --blue: #2563eb;
+  --blue: #3b82f6;
   --neutral: #10b981;
-  --border: #e6edf3;
+  --border: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 body.dark {
-  --bg: #0b1020;
-  --card: #0f1724;
+  --bg: #0f172a;
+  --card: #1e293b;
   --muted: #94a3b8;
-  --accent: #cbd5e1;
-  --border: #16202b;
+  --accent: #f1f5f9;
+  --border: #334155;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -25,12 +27,12 @@ body.dark {
 }
 
 body {
-  font-family: Inter, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Geist', system-ui, -apple-system, 'Segoe UI', sans-serif;
   line-height: 1.6;
   margin: 0;
-  background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+  background: var(--bg);
   color: var(--accent);
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .container {
@@ -45,11 +47,12 @@ body {
 }
 
 .site-header {
-  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
-  backdrop-filter: blur(6px);
+  background: var(--card);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
-  margin-bottom: 2.25rem;
+  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .site-header .container {
@@ -60,9 +63,13 @@ body {
 
 .site-header h1 {
   margin: 0;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+.site-header h1 a {
+  color: var(--accent);
 }
 
 .site-header nav {
@@ -84,28 +91,37 @@ body {
 
 .tagline {
   color: var(--muted);
-  margin: -1rem 0 2rem 0;
-  font-size: 1.05rem;
+  margin: 0 0 0 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .tagline { display: inline-block; }
 }
 
 .hero {
-  background: linear-gradient(180deg, rgba(14,165,164,0.06), rgba(37,99,235,0.03));
+  background: linear-gradient(135deg, var(--card) 0%, var(--bg) 100%);
   border: 1px solid var(--border);
-  padding: 2.25rem 1.25rem;
-  border-radius: 12px;
-  margin-bottom: 1.75rem;
+  padding: 3rem 1.5rem;
+  border-radius: 16px;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow);
 }
 
 .hero h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2rem;
-  line-height: 1.05;
+  margin: 0 0 0.75rem 0;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 700;
 }
 
 .hero p {
-  margin: 0 0 1rem 0;
+  margin: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  max-width: 560px;
 }
 
 .btn-primary {
@@ -134,15 +150,16 @@ body {
 
 .post-card {
   background: var(--card);
-  padding: 1.5rem;
+  padding: 1.75rem;
   border-radius: 12px;
   border: 1px solid var(--border);
-  transition: transform 0.12s, box-shadow 0.12s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow);
 }
 
 .post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 }
 
 .post-card h3 {
@@ -235,11 +252,12 @@ button:hover {
 }
 
 .site-footer {
-  padding: 2.25rem 0;
-  margin-top: 3.25rem;
+  padding: 2.5rem 0;
+  margin-top: 4rem;
   color: var(--muted);
   text-align: center;
   border-top: 1px solid var(--border);
+  font-size: 0.875rem;
 }
 
 .muted {
