@@ -15,27 +15,60 @@ export default function Admin(){
   async function remove(id){ if(!confirm('Delete?')) return; const res = await fetch('/api/deletePost',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+getToken()},body:JSON.stringify({id})}); if(res.ok){ setPosts((p)=>p.filter(x=>x.id!==id)) } else alert('delete failed') }
 
   return (
-      <main className="container">
-        {!authed && (
-          <section>
-            <h2>Login</h2>
-            <form onSubmit={doLogin} className="login-form"><label>Password</label><input name="password" type="password" /><button>Login</button></form>
-          </section>
-        )}
+    <>
+      {!authed && (
+        <section style={{maxWidth: '600px', margin: '0 auto'}}>
+          <h2>Admin Login</h2>
+          <form onSubmit={doLogin} className="login-form">
+            <div>
+              <label htmlFor="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Enter admin password" />
+            </div>
+            <button type="submit">Login</button>
+          </form>
+        </section>
+      )}
 
-        {authed && (
-          <section>
-            <h2>Create post</h2>
+      {authed && (
+        <>
+          <section style={{maxWidth: '600px', margin: '0 auto', marginBottom: '3rem'}}>
+            <h2>Create Post</h2>
             <form onSubmit={create} className="create-form">
-              <label>Title</label><input name="title" />
-              <label>Content</label><textarea name="content" rows={6}></textarea>
-              <label>Tags (comma separated)</label><input name="tags" />
-              <button>Create</button>
+              <div>
+                <label htmlFor="title">Title</label>
+                <input id="title" name="title" placeholder="Post title" />
+              </div>
+              <div>
+                <label htmlFor="content">Content</label>
+                <textarea id="content" name="content" placeholder="Post content..."></textarea>
+              </div>
+              <div>
+                <label htmlFor="tags">Tags (comma separated)</label>
+                <input id="tags" name="tags" placeholder="politics, news, analysis" />
+              </div>
+              <button type="submit">Create Post</button>
             </form>
-            <h3 style={{marginTop:18}}>Existing posts</h3>
-            <div className="post-list">{!posts && 'Loading...'}{posts && posts.map(p=> <div key={p.id} className="post-card"><h3>{p.title} <button onClick={()=>remove(p.id)} style={{float:'right'}}>Delete</button></h3><p className="muted">{p.created_at}</p><p>{(p.content||'').slice(0,300)}</p></div>)}</div>
           </section>
-        )}
-      </main>
+
+          <section style={{maxWidth: '1100px', margin: '0 auto'}}>
+            <h2>Existing Posts</h2>
+            <div className="post-list">
+              {!posts && <p>Loading...</p>}
+              {posts && posts.length === 0 && <p className="muted">No posts yet.</p>}
+              {posts && posts.map(p=> (
+                <div key={p.id} className="post-card" style={{display: 'flex', flexDirection: 'column'}}>
+                  <div style={{display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem'}}>
+                    <h3 style={{margin: '0 0 0.5rem 0'}}>{p.title}</h3>
+                    <button className="btn-delete" onClick={()=>remove(p.id)}>Delete</button>
+                  </div>
+                  <p className="muted" style={{margin: '0 0 0.75rem 0', fontSize: '0.85rem'}}>{new Date(p.created_at).toLocaleString()}</p>
+                  <p style={{margin: 0, color: 'var(--accent)'}}>{(p.content||'').slice(0,300)}{(p.content||'').length > 300 ? '…' : ''}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+    </>
   )
 }
