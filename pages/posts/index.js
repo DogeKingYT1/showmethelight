@@ -2,8 +2,6 @@ import Link from 'next/link'
 
 export default function Posts({posts}){
   return (
-    <div>
-      <header className="site-header"><div className="container"><h1>ShowMeTheLight</h1><nav><Link href="/">Home</Link>{' '}<Link href="/admin">Admin</Link></nav></div></header>
       <main className="container">
         <h2>All posts</h2>
         <div className="post-list">
@@ -13,7 +11,6 @@ export default function Posts({posts}){
           ))}
         </div>
       </main>
-    </div>
   )
 }
 

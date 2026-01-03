@@ -15,8 +15,6 @@ export default function Admin(){
   async function remove(id){ if(!confirm('Delete?')) return; const res = await fetch('/api/deletePost',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+getToken()},body:JSON.stringify({id})}); if(res.ok){ setPosts((p)=>p.filter(x=>x.id!==id)) } else alert('delete failed') }
 
   return (
-    <div>
-      <header className="site-header"><div className="container"><h1>Admin</h1></div></header>
       <main className="container">
         {!authed && (
           <section>
@@ -39,6 +37,5 @@ export default function Admin(){
           </section>
         )}
       </main>
-    </div>
   )
 }

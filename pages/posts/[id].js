@@ -8,7 +8,7 @@ export default function Post(){
   useEffect(()=>{ if(!id) return; fetch(`/api/posts?id=eq.${encodeURIComponent(id)}`).then(r=>r.ok? r.json():[]).then(arr=>setPost(arr[0]||null)).catch(()=>setPost(null)) },[id])
   if (!id) return <div className="container">No post selected.</div>
   return (
-    <div className="container">
+    <>
       {!post && 'Loading...'}
       {post && (
         <article className="post-card">
@@ -17,6 +17,6 @@ export default function Post(){
           <div style={{whiteSpace:'pre-wrap'}}>{post.content}</div>
         </article>
       )}
-    </div>
+    </>
   )
 }

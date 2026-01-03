@@ -1,47 +1,47 @@
 globalThis.__BUILD_MANIFEST = {
   "pages": {
     "/": [
-      "static/chunks/23298673ab92b4b3.js",
+      "static/chunks/ebcb74f85796b4f2.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/turbopack-e7f6d5de39b25c3c.js"
+      "static/chunks/turbopack-21b0b64539a17ae2.js"
     ],
     "/_app": [
-      "static/chunks/edc621f898e759e3.js",
+      "static/chunks/7304fc17dce811de.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/9c2a8e9ddd65c12d.css",
-      "static/chunks/turbopack-8184effc38fc48cc.js"
+      "static/chunks/dd57ab1d31d2c2e2.css",
+      "static/chunks/turbopack-ac939fa06f6bb5a7.js"
     ],
     "/_error": [
-      "static/chunks/b021b946e8e756da.js",
+      "static/chunks/e0ea1b6ffaa9e56e.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/turbopack-1516f0407c9b723b.js"
+      "static/chunks/turbopack-6ab9e8529e7c911e.js"
     ],
     "/admin": [
-      "static/chunks/a6b6f196f6b5a619.js",
+      "static/chunks/4240c6e00f7c191d.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/turbopack-d79eb7aa47459c52.js"
+      "static/chunks/turbopack-cd31cad147b4aaae.js"
     ],
     "/posts": [
-      "static/chunks/afe3e070ee3759ee.js",
+      "static/chunks/8645575394f8ab49.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/turbopack-de28d6c2c518bacf.js"
+      "static/chunks/turbopack-eef2d12430b4b47a.js"
     ],
     "/posts/[id]": [
-      "static/chunks/6c8954877c197f11.js",
+      "static/chunks/db09f381642527f7.js",
       "static/chunks/61fa2539a16c1b12.js",
       "static/chunks/acf108a5e616596f.js",
       "static/chunks/552d2be9af2230ce.js",
-      "static/chunks/turbopack-2562f5a3d00191e6.js"
+      "static/chunks/turbopack-ed6d509d47ac525a.js"
     ]
   },
   "devFiles": [],

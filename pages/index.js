@@ -7,20 +7,8 @@ export default function Home(){
 
   return (
     <div>
-      <header className="site-header">
-        <div className="container">
-          <h1>ShowMeTheLight</h1>
-          <p className="tagline">Compare framing — read sources without editorializing.</p>
-          <nav>
-            <Link href="/">Home</Link>
-            {' '}
-            <Link href="/posts">Posts</Link>
-            {' '}
-            <Link href="/admin">Admin</Link>
-          </nav>
-        </div>
-      </header>
       <main className="container">
+        <p className="tagline">Compare framing — read sources without editorializing.</p>
         <section id="posts">
           <h2>Latest posts</h2>
           <div id="post-list" className="post-list">
@@ -36,7 +24,6 @@ export default function Home(){
           </div>
         </section>
       </main>
-      <footer className="site-footer container"><small>ShowMeTheLight — Transparency-focused aggregator</small></footer>
     </div>
   )
 }
