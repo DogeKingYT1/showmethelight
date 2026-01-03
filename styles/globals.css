@@ -1,46 +1,55 @@
 :root {
-  --bg: #f8f9fa;
+  --bg: #f6f8fb;
   --card: #ffffff;
-  --muted: #6c757d;
-  --accent: #212529;
-  --red: #dc3545;
-  --blue: #0d6efd;
-  --neutral: #198754;
-  --border: #dee2e6;
+  --muted: #6b7280;
+  --accent: #0f172a;
+  --accent-2: #0ea5a4;
+  --red: #ef4444;
+  --blue: #2563eb;
+  --neutral: #10b981;
+  --border: #e6edf3;
 }
 
 body.dark {
-  --bg: #1a1a1a;
-  --card: #2c2c2c;
-  --muted: #adb5bd;
-  --accent: #e9ecef;
-  --border: #495057;
+  --bg: #0b1020;
+  --card: #0f1724;
+  --muted: #94a3b8;
+  --accent: #e6eef6;
+  --border: #16202b;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: Inter, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
   color: var(--accent);
   transition: background 0.2s, color 0.2s;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
+}
+
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .site-header {
-  background: var(--card);
+  background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
   padding: 1rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
 }
 
 .site-header .container {
@@ -51,8 +60,9 @@ body {
 
 .site-header h1 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .site-header nav {
@@ -75,31 +85,69 @@ body {
 .tagline {
   color: var(--muted);
   margin: -1rem 0 2rem 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
+
+.hero {
+  background: linear-gradient(180deg, rgba(14,165,164,0.06), rgba(37,99,235,0.03));
+  border: 1px solid var(--border);
+  padding: 2.25rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.75rem;
+}
+
+.hero h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  line-height: 1.05;
+}
+
+.hero p {
+  margin: 0 0 1rem 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--blue), var(--accent-2));
+  color: white;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nav-link { color: var(--muted); }
+.nav-link:hover { color: var(--blue); }
 
 .post-list {
   display: grid;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 800px) {
+  .post-list { grid-template-columns: repeat(2, 1fr); }
 }
 
 .post-card {
   background: var(--card);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: transform 0.12s, box-shadow 0.12s;
 }
 
 .post-card:hover {
-  border-color: var(--blue);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(16,24,40,0.06);
 }
 
 .post-card h3 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .post-meta {
@@ -174,12 +222,12 @@ button {
   background: var(--blue);
   color: #fff;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: background 0.2s;
+  font-size: 0.98rem;
+  font-weight: 600;
+  transition: transform 0.12s, box-shadow 0.12s;
 }
 
 button:hover {
@@ -187,8 +235,8 @@ button:hover {
 }
 
 .site-footer {
-  padding: 2rem 0;
-  margin-top: 3rem;
+  padding: 2.25rem 0;
+  margin-top: 3.25rem;
   color: var(--muted);
   text-align: center;
   border-top: 1px solid var(--border);
