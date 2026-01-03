@@ -8,11 +8,11 @@
     "start": "next start -p 3000"
   },
   "dependencies": {
-    "next": "14.0.0",
+    "next": "16.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^7.0.0"
+    "@netlify/plugin-nextjs": "^5.15.3"
   }
 }

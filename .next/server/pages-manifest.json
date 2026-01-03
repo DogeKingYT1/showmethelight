@@ -1,1 +1,14 @@
-{"/_app":"pages/_app.js","/_error":"pages/_error.js","/admin":"pages/admin.html","/api/deletePost":"pages/api/deletePost.js","/api/createPost":"pages/api/createPost.js","/api/login":"pages/api/login.js","/":"pages/index.html","/posts/[id]":"pages/posts/[id].html","/api/posts":"pages/api/posts.js","/posts":"pages/posts.js","/_document":"pages/_document.js","/404":"pages/404.html"}
+{
+  "/": "pages/index.html",
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/admin": "pages/admin.html",
+  "/api/createPost": "pages/api/createPost.js",
+  "/api/deletePost": "pages/api/deletePost.js",
+  "/api/login": "pages/api/login.js",
+  "/api/posts": "pages/api/posts.js",
+  "/posts": "pages/posts.js",
+  "/posts/[id]": "pages/posts/[id].html",
+  "/404": "pages/404.html"
+}

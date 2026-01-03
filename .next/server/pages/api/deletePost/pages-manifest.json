@@ -1,0 +1,3 @@
+{
+  "/api/deletePost": "pages/api/deletePost.js"
+}
