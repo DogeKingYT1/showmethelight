@@ -8,7 +8,6 @@ export default function Home(){
   return (
     <div>
       <main className="container">
-        <p className="tagline">Compare framing — read sources without editorializing.</p>
         <section id="posts">
           <h2>Latest posts</h2>
           <div id="post-list" className="post-list">
