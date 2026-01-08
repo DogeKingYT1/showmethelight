@@ -82,6 +82,29 @@ export default function Admin(){
     }
   }
 
+  async function createAnnouncement(e){
+    e.preventDefault();
+    setError('');
+    if(!getToken()) { setError('Not authenticated'); return; }
+    setLoading(true);
+    const title = e.target.ann_title.value;
+    const content = e.target.ann_content.value;
+    if(!title.trim() || !content.trim()){ setError('Title and content required'); setLoading(false); return; }
+    try{
+      const res = await fetch('/api/createPost', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+getToken() },
+        body: JSON.stringify({ title, content, tags: ['announcement'] })
+      });
+      if(!res.ok){ const jd = await res.json().catch(()=>({})); throw new Error(jd.error||'post failed'); }
+      e.target.reset();
+      const newPosts = await (await fetch('/api/posts')).json();
+      setPosts(newPosts);
+      setError('Announcement posted');
+    }catch(err){ setError('Error: '+err.message); }
+    finally{ setLoading(false); }
+  }
+
   async function remove(id){ 
     if(!confirm('Delete this post?')) return; 
     try {
@@ -116,6 +139,20 @@ export default function Admin(){
         <>
           <section style={{maxWidth: '600px', margin: '0 auto', marginBottom: '3rem'}}>
             <h2>Create Post</h2>
+            <div style={{marginBottom: '1.5rem', padding: '12px', border: '1px dashed #ccc', borderRadius: 8}}>
+              <h3 style={{marginTop: 0}}>Quick Announcement</h3>
+              <form onSubmit={createAnnouncement}>
+                <div>
+                  <label htmlFor="ann_title">Title *</label>
+                  <input id="ann_title" name="ann_title" placeholder="Announcement title" required style={{width: '100%', padding: 8, marginBottom: 8}} />
+                </div>
+                <div>
+                  <label htmlFor="ann_content">Content *</label>
+                  <textarea id="ann_content" name="ann_content" rows={4} placeholder="Announcement content..." style={{width: '100%', padding: 8, marginBottom: 8}} />
+                </div>
+                <button type="submit" disabled={loading}>{loading ? 'Posting...' : 'Post Announcement'}</button>
+              </form>
+            </div>
             {error && <div style={{background: 'var(--red)', color: 'white', padding: '0.75rem', borderRadius: '8px', marginBottom: '1rem'}}>{error}</div>}
             <form onSubmit={create} className="create-form">
               <div>
